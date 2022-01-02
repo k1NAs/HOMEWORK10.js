@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		function mapBuilder(keys, values) {
+			if (keys.length !== values.length) {
+				console.log('length for keys and values should be the same');
+				return;
+			}
+
+			const map = new Map();
+
+			keys.forEach((key, i) => {
+				map.set(key, values[i]);
+			});
+
+			return map;
+		}
+
+		let keys = [1, 2, 3, 4];
+		let values = ["div", "span", "b", "i"];
+		let map = mapBuilder(keys, values);
+		console.log(map.size); // 4
+		console.log(map.get(2)); // "span"
+
+
+	</script>
+</body>
+
+</html>
